@@ -1,0 +1,12 @@
+# QT大作业
+
+队名：Coding project practice
+
+## 项目创建参数
+
+创建时使用QtCreator创建，创建时参数如下
+
+- 模板：Qt Widgets Application
+- 构建工具：qmake
+- 构建套件：Desktop Qt 6.7.0 MinGW 64-bit
+- 翻译：添加简体中文（zh_CN）
