@@ -1,5 +1,7 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+#include"dishfilehandler.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
