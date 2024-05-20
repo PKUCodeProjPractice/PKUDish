@@ -59,17 +59,13 @@ const QMap<QString, Canteen> NAME_CANTEEN = {
 Canteen getCanteenFromName(const QString &name);
 QString getCanteenName(const Canteen);
 
-struct Dish{
+struct Dish
+{
     int id;
     QString name;
     float price; // 感觉就两位小数不需要double
     Canteen canteen;
     QSet<QString> tags;
-};
-
-class Dishes{
-private:
-    QVector<Dish> dishes;
 };
 
 #endif // DISH_H
