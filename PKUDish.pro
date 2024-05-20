@@ -11,12 +11,14 @@ CONFIG += c++17
 
 SOURCES += \
     dish.cpp \
+    dishes.cpp \
     dishfilehandler.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     dish.h \
+    dishes.h \
     dishfilehandler.h \
     mainwindow.h
 
