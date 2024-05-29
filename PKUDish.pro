@@ -13,15 +13,18 @@ SOURCES += \
     dish.cpp \
     dishfilehandler.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tab1.cpp
 
 HEADERS += \
     dish.h \
     dishfilehandler.h \
-    mainwindow.h
+    mainwindow.h \
+    tab1.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    tab1.ui
 
 TRANSLATIONS += \
     PKUDish_zh_CN.ts
