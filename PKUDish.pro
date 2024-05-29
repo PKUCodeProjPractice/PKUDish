@@ -16,6 +16,7 @@ SOURCES += \
     dishfilehandler.cpp \
     main.cpp \
     mainwindow.cpp \
+    tab1.cpp
     randomtab.cpp
     randdish.cpp \
     tags.cpp
@@ -26,11 +27,14 @@ HEADERS += \
     dishes.h \
     dishfilehandler.h \
     mainwindow.h \
-    randomtab.h
+    randomtab.h \
     randdish.h \
-    tags.h
+    tags.h \
+    tab1.h
 
 FORMS += \
+    mainwindow.ui \
+    tab1.ui \
     dishbox.ui \
     mainwindow.ui \
     randomtab.ui
