@@ -66,6 +66,19 @@ public:
     Dishes searchInTags(const QString &query, MatchMode mode = MatchMode::CONTAINS_ANY) const;
     Dishes searchInNameOrTags(const QString &query, MatchMode mode = MatchMode::CONTAINS_ANY) const;
 
+    template<typename Predicate>
+    Dishes filterGeneral(Predicate f){
+        Dishes ret;
+        foreach (const Dish &d, dishes)
+        {
+            if (f(d))
+            {
+                ret.append(d);
+            }
+        }
+        return ret;
+    }
+
     /**
      * 对自身排序.
      * 默认为升序.

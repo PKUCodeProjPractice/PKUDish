@@ -1,6 +1,6 @@
 #include"tags.h"
 
-bool operator<(const DishTaste & a, const DishTaste & b){
+/*bool operator<(const DishTaste & a, const DishTaste & b){
     switch(a){
     case DishTaste::NOT_SPICY:switch(b) {
         case DishTaste::NOT_SPICY:return false;
@@ -26,7 +26,8 @@ bool operator<(const DishTaste & a, const DishTaste & b){
         case DishTaste::MIDDLE_SPICY:
         case DishTaste::HEAVY_SPICY:return false;
     }
-}
+    }
+}*/
 
 DishTag::DishTag(TagKind _kind):kind(_kind){}
 DishNormalTag::DishNormalTag(const QString & _name):DishTag(TagKind::NORMAL), name(_name){}
