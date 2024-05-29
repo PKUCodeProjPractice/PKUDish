@@ -10,6 +10,7 @@ struct RandConfig{
     bool has_main = false;
     bool has_meat = false;
     bool has_vege = false;
+    DishTaste upper_spicy = DishTaste::HEAVY_SPICY;
 };
 
 Dishes randChoice(Dishes & dishes, const RandConfig & config);
