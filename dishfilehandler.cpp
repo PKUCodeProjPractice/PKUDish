@@ -68,8 +68,19 @@ void DishFileHandler::readTXT(const QString &path, Dishes &dishes)
 
         if (!strs.empty())
         {
-            foreach (const QString &s, strs.first().split(" ", Qt::SkipEmptyParts))
-                d.tags.insert(s);
+            foreach (const QString &s, strs.first().split(" ", Qt::SkipEmptyParts)){
+                auto iter = predefine_tags.find(s);
+                if(iter == predefine_tags.end()){
+                    auto p = new DishNormalTag(s);
+                    if(p == nullptr){
+                        //
+                    }
+                    predefine_tags[s] = p;
+                    d.tags.insert(p);
+                }else{
+                    d.tags.insert(*iter);
+                }
+            }
         }
         dishes.append(d);
     }
@@ -88,9 +99,8 @@ void DishFileHandler::writeTXT(const QString &path, const Dishes &dishes)
     foreach (const Dish &d, dishes.getAllDishes())
     {
         out << d.name << "\t" << d.price << "\t" << getCanteenName(d.canteen) << "\t";
-        foreach (const QString &t, d.tags)
-        {
-            out << t << " ";
+        foreach (const DishTag* p, d.tags){
+            out << p->toString() << " ";
         }
         out << "\n";
     }
@@ -126,8 +136,19 @@ void DishFileHandler::readCSV(const QString &path, Dishes & dishes)
 
         if (!strs.empty())
         {
-            foreach (const QString &s, strs.first().split(" ", Qt::SkipEmptyParts))
-                d.tags.insert(s);
+            foreach (const QString &s, strs.first().split(" ", Qt::SkipEmptyParts)){
+                auto iter = predefine_tags.find(s);
+                if(iter == predefine_tags.end()){
+                    auto p = new DishNormalTag(s);
+                    if(p == nullptr){
+                        //
+                    }
+                    predefine_tags[s] = p;
+                    d.tags.insert(p);
+                }else{
+                    d.tags.insert(*iter);
+                }
+            }
         }
         dishes.append(d);
     }
@@ -146,9 +167,8 @@ void DishFileHandler::writeCSV(const QString &path, const Dishes &dishes)
     foreach (const Dish &d, dishes.getAllDishes())
     {
         out << d.id << "," << d.name << "," << d.price << "," << getCanteenName(d.canteen) << ",";
-        foreach (const QString &t, d.tags)
-        {
-            out << t << " ";
+        foreach (const DishTag* p, d.tags){
+            out << p->toString() << " ";
         }
         out << "\n";
     }

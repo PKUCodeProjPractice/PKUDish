@@ -5,6 +5,7 @@
 #include<QMap>
 #include<QVector>
 #include<QString>
+#include"tags.h"
 
 /* 食堂定义
  * 如需修改请修改如下关联内容
@@ -65,7 +66,7 @@ struct Dish
     QString name;
     float price; // 感觉就两位小数不需要double
     Canteen canteen;
-    QSet<QString> tags;
+    QSet<DishTag*> tags;
 };
 
 #endif // DISH_H

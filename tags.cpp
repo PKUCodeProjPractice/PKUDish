@@ -1,10 +1,15 @@
 #include"tags.h"
 
 DishTag::DishTag(TagKind _kind):kind(_kind){}
-DishNormalTag::DishNormalTag(QString & _name):DishTag(TagKind::NORMAL), name(_name){}
+DishNormalTag::DishNormalTag(const QString & _name):DishTag(TagKind::NORMAL), name(_name){}
 DishKindTag::DishKindTag(DishKind _kind):DishTag(TagKind::KIND), dish_kind(_kind){}
 DishTasteTag::DishTasteTag(DishTaste _taste):DishTag(TagKind::TASTE), taste(_taste){}
 DishWaitTag::DishWaitTag(bool _wait):DishTag(TagKind::WAIT), should_wait(_wait){}
+
+QString DishNormalTag::toString() const {return name;}
+QString DishKindTag::toString() const {return DISHKIND_NAME[dish_kind];}
+QString DishTasteTag::toString() const {return DISHTASTE_NAME[taste];}
+QString DishWaitTag::toString() const {return should_wait ? "需要等待" : "无需等待";}
 
 DishKindTag DISHKINDTAG_TAOCAN = DishKindTag(DishKind::TAOCAN);
 DishKindTag DISHKINDTAG_ZHUSHI = DishKindTag(DishKind::ZHUSHI);
@@ -21,7 +26,7 @@ DishTasteTag DISHTASTETAG_HESPICY = DishTasteTag(DishTaste::HEAVY_SPICY);
 DishWaitTag DISHWAITTAG_TRUE = DishWaitTag(true);
 DishWaitTag DISHWAITTAG_FALSE = DishWaitTag(false);
 
-QMap<QString, DishKindTag*> predefine_tags = {
+QMap<QString, DishTag*> predefine_tags = {
     {"套餐", &DISHKINDTAG_TAOCAN},
     {"主食", &DISHKINDTAG_ZHUSHI},
     {"烧烤", &DISHKINDTAG_SHAOKAO},

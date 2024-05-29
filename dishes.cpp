@@ -170,12 +170,16 @@ bool matches(const QString &query, const QString &target, MatchMode mode)
     }
 }
 
-bool matches(const QString &query, const QSet<QString> &target, MatchMode mode)
+bool matches(const QString &query, const DishTag* const &target, MatchMode mode){
+    return matches(query, target->toString(), mode);
+}
+
+bool matches(const QString &query, const QSet<DishTag*> &target, MatchMode mode)
 {
     switch (mode)
     {
     case MatchMode::PRECISE:
-        foreach (const QString &t, target)
+        foreach (const DishTag* const &t, target)
         {
             if (matches(query, t, MatchMode::PRECISE))
                 return true;
@@ -186,9 +190,9 @@ bool matches(const QString &query, const QSet<QString> &target, MatchMode mode)
         foreach (const QString &q, query.split(" ", Qt::SkipEmptyParts))
         {
             bool found = false;
-            foreach (const QString &t, target)
+            foreach (const DishTag* const &t, target)
             {
-                if (!t.contains(q)) continue;
+                if (!t->toString().contains(q)) continue;
                 found = true;
                 break;
             }
@@ -200,9 +204,9 @@ bool matches(const QString &query, const QSet<QString> &target, MatchMode mode)
     case MatchMode::CONTAINS_ANY:
         foreach (const QString &q, query.split(" ", Qt::SkipEmptyParts))
         {
-            foreach (const QString &t, target)
+            foreach (const DishTag* const &t, target)
             {
-                if (t.contains(q))
+                if (t->toString().contains(q))
                     return true;
             }
         }
