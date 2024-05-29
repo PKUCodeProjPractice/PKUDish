@@ -16,8 +16,8 @@ SOURCES += \
     dishfilehandler.cpp \
     main.cpp \
     mainwindow.cpp \
-    tab1.cpp
-    randomtab.cpp
+    tab1.cpp \
+    randomtab.cpp \
     randdish.cpp \
     tags.cpp
 
