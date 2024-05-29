@@ -1,6 +1,8 @@
 #ifndef _TAGS_H
 #define _TAGS_H
 
+#include<Qt>
+
 enum class TagKind{
   KIND,
   TASTE,
@@ -9,6 +11,8 @@ enum class TagKind{
 
 struct DishTag{
   TagKind kind;
+  protected:
+  DishTag(TagKind _kind);
 };
 
 enum class DishKind{
@@ -22,6 +26,7 @@ enum class DishKind{
 
 struct DishKindTag:public DishTag{
   DishKind dish_kind;
+  DishKindTag(DishKind _kind);
 };
 
 enum class DishTaste{
@@ -33,11 +38,12 @@ enum class DishTaste{
 
 struct DishTasteTag:public DishTag{
   DishTaste taste;
-  public:
+  DishTasteTag(DishTaste _taste = DishTaste::NOT_SPICY);
 };
 
 struct DishWaitTag:public DishTag{
   bool should_wait;
+  DishWaitTag(bool _wait = false);
 };
 
 #endif
