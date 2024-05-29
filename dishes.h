@@ -21,7 +21,8 @@ enum class MatchMode
     CONTAINS_ANY,
 };
 bool matches(const QString &query, const QString &target, MatchMode mode);
-bool matches(const QString &query, const QSet<QString> &target, MatchMode mode);
+bool matches(const QString &query, const DishTag* const &target, MatchMode mode);
+bool matches(const QString &query, const QSet<DishTag*> &target, MatchMode mode);
 
 class Dishes
 {
