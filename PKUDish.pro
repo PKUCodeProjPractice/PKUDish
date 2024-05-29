@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     dish.cpp \
+    dishbox.cpp \
     dishes.cpp \
     dishfilehandler.cpp \
     main.cpp \
@@ -18,11 +19,13 @@ SOURCES += \
 
 HEADERS += \
     dish.h \
+    dishbox.h \
     dishes.h \
     dishfilehandler.h \
     mainwindow.h
 
 FORMS += \
+    dishbox.ui \
     mainwindow.ui
 
 TRANSLATIONS += \
