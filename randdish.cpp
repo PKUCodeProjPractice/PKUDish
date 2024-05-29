@@ -48,6 +48,8 @@ Dishes randChoice(Dishes & dishes, const RandConfig & config){
     }
     // 接着根据辣度筛选
     filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.getTaste() < config.upper_spicy or d.getTaste() == config.upper_spicy;});
+    // 还有菜品价格
+    filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.price >= config.total_price_lower and d.price <= config.total_price_upper;});
     // 选择一个菜品，查看它的食堂; 用第一个菜确定食堂
     Dishes res;
     Canteen canteen = CANTEEN_UNDEF;
