@@ -5,6 +5,7 @@
 #include<QMap>
 #include<QVector>
 #include<QString>
+#include"tags.h"
 
 /* 食堂定义
  * 如需修改请修改如下关联内容
@@ -59,17 +60,15 @@ const QMap<QString, Canteen> NAME_CANTEEN = {
 Canteen getCanteenFromName(const QString &name);
 QString getCanteenName(const Canteen);
 
-struct Dish{
+struct Dish
+{
     int id;
     QString name;
     float price; // 感觉就两位小数不需要double
     Canteen canteen;
-    QSet<QString> tags;
-};
+    QSet<DishTag*> tags;
 
-class Dishes{
-private:
-    QVector<Dish> dishes;
+    DishTaste getTaste() const ;
 };
 
 #endif // DISH_H

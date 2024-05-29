@@ -11,20 +11,33 @@ CONFIG += c++17
 
 SOURCES += \
     dish.cpp \
+    dishbox.cpp \
+    dishes.cpp \
     dishfilehandler.cpp \
     main.cpp \
     mainwindow.cpp \
     tab1.cpp
+    randomtab.cpp
+    randdish.cpp \
+    tags.cpp
 
 HEADERS += \
     dish.h \
+    dishbox.h \
+    dishes.h \
     dishfilehandler.h \
     mainwindow.h \
+    randomtab.h \
+    randdish.h \
+    tags.h \
     tab1.h
 
 FORMS += \
     mainwindow.ui \
-    tab1.ui
+    tab1.ui \
+    dishbox.ui \
+    mainwindow.ui \
+    randomtab.ui
 
 TRANSLATIONS += \
     PKUDish_zh_CN.ts
