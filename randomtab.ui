@@ -157,6 +157,7 @@
         <height>330</height>
        </rect>
       </property>
+      <layout class="QGridLayout" name="gridLayout"/>
      </widget>
     </widget>
    </item>

@@ -1,22 +1,22 @@
-#ifndef TAB1_H
+﻿#ifndef TAB1_H
 #define TAB1_H
 
 #include <QWidget>
 
 namespace Ui {
-class roll;
+class BrowseTab;
 }
 
-class roll : public QWidget
+class BrowseTab : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit roll(QWidget *parent = nullptr);
-    ~roll();
+    explicit BrowseTab(QWidget *parent = nullptr);
+    ~BrowseTab();
 
 private:
-    Ui::roll *ui;
+    Ui::BrowseTab *ui;
 };
 
 #endif // TAB1_H

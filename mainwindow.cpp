@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    browseTab = new BrowseTab;
+    ui->tabWidget->addTab(browseTab, "浏览");
     randomTab = new RandomTab;
     ui->tabWidget->addTab(randomTab, "随机");
 }
@@ -17,5 +19,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete browseTab;
     delete randomTab;
 }

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "randomtab.h"
+#include "tab1.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,6 +21,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    BrowseTab *browseTab;
     RandomTab *randomTab;
 };
 #endif // MAINWINDOW_H

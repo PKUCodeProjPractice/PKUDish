@@ -1,14 +1,14 @@
-#include "tab1.h"
+﻿#include "tab1.h"
 #include "ui_tab1.h"
 
-roll::roll(QWidget *parent)
+BrowseTab::BrowseTab(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::roll)
+    , ui(new Ui::BrowseTab)
 {
     ui->setupUi(this);
 }
 
-roll::~roll()
+BrowseTab::~BrowseTab()
 {
     delete ui;
 }
