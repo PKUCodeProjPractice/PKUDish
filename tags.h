@@ -64,6 +64,8 @@ enum class DishTaste{
   HEAVY_SPICY
 };
 
+bool operator<(const DishTaste & a, const DishTaste & b);
+
 const QMap<DishTaste, QString> DISHTASTE_NAME={
   {DishTaste::NOT_SPICY, "不辣"},
   {DishTaste::LITTLE_SPICY, "微辣"},

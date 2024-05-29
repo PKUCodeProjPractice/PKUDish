@@ -40,7 +40,11 @@ Dishes randChoice(Dishes & dishes, const RandConfig & config){
     Dishes filt;
     // 等待时间
     if(config.no_wait){
-        filt = dishes.searchInTags("等待制作");
+        Dishes rev = dishes.searchInTags("需要等待");
+        filt = dishes;
+        for(const Dish & d:rev.getAllDishes()){
+            dishes.remove(d.id);
+        }
     }
     // TODO：辣度
     // 需要定义辣度上的序关系

@@ -1,5 +1,33 @@
 #include"tags.h"
 
+bool operator<(const DishTaste & a, const DishTaste & b){
+    switch(a){
+    case DishTaste::NOT_SPICY:switch(b) {
+        case DishTaste::NOT_SPICY:return false;
+        case DishTaste::LITTLE_SPICY:
+        case DishTaste::MIDDLE_SPICY:
+        case DishTaste::HEAVY_SPICY:return true;
+    }
+    case DishTaste::LITTLE_SPICY:switch(b) {
+        case DishTaste::NOT_SPICY:
+        case DishTaste::LITTLE_SPICY:return false;
+        case DishTaste::MIDDLE_SPICY:
+        case DishTaste::HEAVY_SPICY:return true;
+        }
+    case DishTaste::MIDDLE_SPICY:switch(b) {
+        case DishTaste::NOT_SPICY:
+        case DishTaste::LITTLE_SPICY:
+        case DishTaste::MIDDLE_SPICY:return false;
+        case DishTaste::HEAVY_SPICY:return true;
+    }
+    case DishTaste::HEAVY_SPICY:switch(b) {
+        case DishTaste::NOT_SPICY:
+        case DishTaste::LITTLE_SPICY:
+        case DishTaste::MIDDLE_SPICY:
+        case DishTaste::HEAVY_SPICY:return false;
+    }
+}
+
 DishTag::DishTag(TagKind _kind):kind(_kind){}
 DishNormalTag::DishNormalTag(const QString & _name):DishTag(TagKind::NORMAL), name(_name){}
 DishKindTag::DishKindTag(DishKind _kind):DishTag(TagKind::KIND), dish_kind(_kind){}

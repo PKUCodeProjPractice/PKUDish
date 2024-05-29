@@ -67,6 +67,8 @@ struct Dish
     float price; // 感觉就两位小数不需要double
     Canteen canteen;
     QSet<DishTag*> tags;
+
+    DishTaste getTaste() const ;
 };
 
 #endif // DISH_H
