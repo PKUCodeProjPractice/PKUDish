@@ -15,18 +15,21 @@ SOURCES += \
     dishes.cpp \
     dishfilehandler.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    randomtab.cpp
 
 HEADERS += \
     dish.h \
     dishbox.h \
     dishes.h \
     dishfilehandler.h \
-    mainwindow.h
+    mainwindow.h \
+    randomtab.h
 
 FORMS += \
     dishbox.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    randomtab.ui
 
 TRANSLATIONS += \
     PKUDish_zh_CN.ts
