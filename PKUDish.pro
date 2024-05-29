@@ -14,13 +14,15 @@ SOURCES += \
     dishes.cpp \
     dishfilehandler.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    randdish.cpp
 
 HEADERS += \
     dish.h \
     dishes.h \
     dishfilehandler.h \
-    mainwindow.h
+    mainwindow.h \
+    randdish.h
 
 FORMS += \
     mainwindow.ui
