@@ -13,3 +13,14 @@ QString getCanteenName(const Canteen canteen)
     if(canteen == CANTEEN_UNDEF)return "未知";
     return CANTEEN_NAME[canteen];
 }
+
+DishTaste Dish::getTaste() const {
+    auto iter = tags.begin();
+    for(; iter != tags.end(); ++iter){
+        if((*iter)->kind == TagKind::TASTE) break;
+    }
+    if(iter != tags.end()){
+        return NAME_DISHTASTE[(*iter)->toString()];
+    }
+    return DishTaste::NOT_SPICY;
+}
