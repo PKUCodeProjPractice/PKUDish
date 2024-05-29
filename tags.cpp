@@ -34,6 +34,7 @@ QMap<QString, DishTag*> predefine_tags = {
     {"肉", &DISHKINDTAG_ROU},
     {"素", &DISHKINDTAG_CAI},
 
+    {"辣", &DISHTASTETAG_MISPICY},
     {"不辣", &DISHTASTETAG_NOSPICY},
     {"微辣", &DISHTASTETAG_LISPICY},
     {"中辣", &DISHTASTETAG_MISPICY},

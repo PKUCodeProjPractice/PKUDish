@@ -4,7 +4,10 @@
 using namespace std;
 
 // 不在头文件中
-optional<Dish> randChoiceOneFromTag(Dishes & dishes, QString & tag, Canteen & canteen){
+optional<Dish> randChoiceOneFromTag(Dishes & dishes, const QString & tag, Canteen & canteen){
+    // 初始化随机数
+    default_random_engine gen;
+    gen.seed(time(0));
     Dishes filt;
     if(canteen != CANTEEN_UNDEF){
         filt = dishes.filterCanteen(canteen); // 这个if或许可以通过修改过滤的实现方式合并
@@ -23,19 +26,16 @@ optional<Dish> randChoiceOneFromTag(Dishes & dishes, QString & tag, Canteen & ca
 }
 
 // 不在头文件中
-void appendDishChoice(Dishes & res, Dishes & dishes, QString & tag, Canteen & canteen){
+void appendDishChoice(Dishes & res, Dishes & dishes, const QString & tag, Canteen & canteen){
     auto dish = randChoiceOneFromTag(dishes, tag, canteen);
     if(dish.has_value()){
-        res.append(dish);
+        res.append(dish.value());
     }else{
         // TODO:这里可能得加个报错，用来在前端显示
     }
 }
 
 Dishes randChoice(Dishes & dishes, const RandConfig & config){
-    // 初始化随机数
-    default_random_engine gen;
-    gen.seed(time(0));
     // 首先先进行针对单菜品的筛选
     Dishes filt;
     // 等待时间
