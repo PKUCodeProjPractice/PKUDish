@@ -11,7 +11,7 @@ struct RandConfig{
     bool has_meat = false;
     bool has_vege = false;
     DishTaste upper_spicy = DishTaste::HEAVY_SPICY;
-    float total_price_lower, total_price_upper;
+    float total_price_lower = 0, total_price_upper = 0;
 };
 
 Dishes randChoice(Dishes & dishes, const RandConfig & config);
