@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>643</width>
-    <height>369</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,42 +21,12 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="2">
-      <widget class="QComboBox" name="comboBox_tags"/>
-     </item>
-     <item row="1" column="3">
+    <layout class="QHBoxLayout" name="horizontalLayout_search">
+     <item>
       <widget class="QLineEdit" name="lineEdit_search"/>
      </item>
-     <item row="1" column="0">
-      <widget class="QComboBox" name="comboBox_canteen"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="comboBox_price"/>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_canteen">
-       <property name="text">
-        <string>食堂</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label_price">
-       <property name="text">
-        <string>价格</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLabel" name="label_tags">
-       <property name="text">
-        <string>标签</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QLabel" name="label_search">
+     <item>
+      <widget class="QPushButton" name="pushButton_search">
        <property name="text">
         <string>搜索</string>
        </property>
@@ -65,33 +35,116 @@
     </layout>
    </item>
    <item>
+    <layout class="QGridLayout" name="gridLayout_filters">
+     <item row="1" column="0">
+      <widget class="QGroupBox" name="groupBox_canteen">
+       <property name="title">
+        <string>食堂</string>
+       </property>
+       <layout class="QGridLayout" name="layout_canteen"/>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QGroupBox" name="groupBox_price">
+       <property name="title">
+        <string>价格</string>
+       </property>
+       <layout class="QHBoxLayout" name="layout_price">
+        <item>
+         <widget class="QComboBox" name="comboBox_order">
+          <item>
+           <property name="text">
+            <string>从低到高</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>从高到低</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_lwr">
+          <property name="suffix">
+           <string>元</string>
+          </property>
+          <property name="decimals">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="maximumSize">
+           <size>
+            <width>10</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>~</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_upr">
+          <property name="suffix">
+           <string>元</string>
+          </property>
+          <property name="decimals">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>100.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QGroupBox" name="groupBox_taste">
+       <property name="title">
+        <string>口味</string>
+       </property>
+       <layout class="QGridLayout" name="layout_taste"/>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QGroupBox" name="groupBox_kind">
+       <property name="title">
+        <string>类型</string>
+       </property>
+       <layout class="QGridLayout" name="layout_kind"/>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <widget class="QScrollArea" name="scrollArea">
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
      <property name="widgetResizable">
       <bool>true</bool>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
      </property>
      <widget class="QWidget" name="scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>619</width>
-        <height>283</height>
+        <width>776</width>
+        <height>395</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_scroll">
-       <property name="spacing">
-        <number>11</number>
-       </property>
-      </layout>
+      <layout class="QGridLayout" name="gridLayout_scroll"/>
      </widget>
     </widget>
    </item>
