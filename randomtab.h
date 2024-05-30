@@ -11,9 +11,10 @@ class RandomTab;
 class RandomTab;
 
 class RandomTabCtrl{
-    const RandomTab* view;
+    RandomTab* view;
 public:
-    RandomTabCtrl(const RandomTab* _view);
+    RandomTabCtrl(RandomTab* _view);
+    void view_reset();
 };
 
 class RandomTab : public QWidget
@@ -25,6 +26,7 @@ public:
     explicit RandomTab(QWidget *parent = nullptr);
     ~RandomTab();
     RandConfig dumpConfig();
+    void reset();
 
 private:
     Ui::RandomTab *ui;
