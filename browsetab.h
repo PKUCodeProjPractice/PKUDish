@@ -1,10 +1,14 @@
 ﻿#ifndef BROWSETAB_H
 #define BROWSETAB_H
 
+#include <QMap>
 #include <QWidget>
 #include <QVector>
+#include <QCheckBox>
+#include "dish.h"
 #include "dishes.h"
 #include "dishbox.h"
+#include "tags.h"
 
 namespace Ui {
 class BrowseTab;
@@ -19,12 +23,25 @@ public:
     ~BrowseTab();
 
     void setDishes(const Dishes &d);
-    void updateView();
+    void updateView(const Dishes &d);
+
+private slots:
+    void on_pushButton_search_clicked();
+
+    void on_comboBox_order_currentIndexChanged(int index);
+
+    void on_doubleSpinBox_lwr_valueChanged(double arg1);
+
+    void on_doubleSpinBox_upr_valueChanged(double arg1);
 
 private:
     Ui::BrowseTab *ui;
     Dishes dishes;
     QVector<DishBox *> boxes;
+
+    QMap<Canteen, QCheckBox *> canteenCheck;
+    QMap<DishKind, QCheckBox *> dishKindCheck;
+    QMap<DishTaste, QCheckBox *> dishTasteCheck;
 };
 
 #endif // BROWSETAB_H
