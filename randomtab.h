@@ -12,9 +12,13 @@ class RandomTab;
 
 class RandomTabCtrl{
     RandomTab* view;
+    Dishes dishes;
 public:
     RandomTabCtrl(RandomTab* _view);
     void view_reset();
+    void random_choice();
+    void view_dish_reset();
+    void setDishes(Dishes & _dishes);
 };
 
 class RandomTab : public QWidget
@@ -27,6 +31,9 @@ public:
     ~RandomTab();
     RandConfig dumpConfig();
     void reset();
+    void dish_reset();
+    void show_dishes(const Dishes & dishes);
+    void setDishes(Dishes & _dishes);
 
 private:
     Ui::RandomTab *ui;

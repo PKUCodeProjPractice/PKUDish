@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::warning(this, "error reading file", e.getMessage());
     }
     browseTab->setDishes(dishes);
+    randomTab->setDishes(dishes);
 }
 
 MainWindow::~MainWindow()
