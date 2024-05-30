@@ -53,7 +53,7 @@ Dishes randChoice(Dishes & dishes, const RandConfig & config){
     filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.price >= config.total_price_lower and d.price <= config.total_price_upper;});
     // 选择一个菜品，查看它的食堂; 用第一个菜确定食堂
     Dishes res;
-    Canteen canteen = CANTEEN_UNDEF;
+    Canteen canteen = config.canteen;
     if(config.has_pack)appendDishChoice(res, filt, "套餐", canteen);
     if(config.has_main)appendDishChoice(res, filt, "主食", canteen);
     if(config.has_meat)appendDishChoice(res, filt, "荤", canteen);
