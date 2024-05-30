@@ -10,7 +10,7 @@ Canteen getCanteenFromName(const QString & name)
 
 QString getCanteenName(const Canteen canteen)
 {
-    if(canteen == CANTEEN_UNDEF)return "未知";
+    if(canteen == CANTEEN_UNDEF)return "（空）";
     return CANTEEN_NAME[canteen];
 }
 
