@@ -1,6 +1,7 @@
 ﻿#include "dishbox.h"
 #include "ui_dishbox.h"
 #include <QTextStream>
+#include "tags.h"
 
 DishBox::DishBox(QWidget *parent)
     : QWidget(parent)
@@ -19,10 +20,9 @@ void DishBox::setDish(const Dish &dish)
     ui->name->setText(dish.name);
     ui->canteen->setText(getCanteenName(dish.canteen));
     ui->price->setText(QString::number(dish.price));
-    QTextStream tags;
-    foreach (const QString &tag, dish.tags)
-        tags << tag << " ";
-    QString tagsStr;
-    tags >> tagsStr;
-    ui->tags->setText(tagsStr);
+    QString tags;
+    QTextStream stream(&tags);
+    foreach (const DishTag *tag, dish.tags)
+        stream << tag->toString() << " ";
+    ui->tags->setText(tags);
 }

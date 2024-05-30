@@ -9,13 +9,30 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("PKUDish");
+    this->setFixedSize(800, 600);
 
-    randomTab = new RandomTab;
+    browseTab = new BrowseTab();
+    ui->tabWidget->addTab(browseTab, "浏览");
+    randomTab = new RandomTab();
     ui->tabWidget->addTab(randomTab, "随机");
+
+    // load dishes
+    Dishes dishes;
+    try
+    {
+        DishFileHandler::read("://assets/data/dishes.csv", dishes);
+    }
+    catch (const DishFileException &e)
+    {
+        QMessageBox::warning(this, "error reading file", e.getMessage());
+    }
+    browseTab->setDishes(dishes);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete browseTab;
     delete randomTab;
 }

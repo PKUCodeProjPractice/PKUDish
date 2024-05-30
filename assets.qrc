@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>assets/data/dishes.txt</file>
+        <file>assets/data/dishes.csv</file>
     </qresource>
 </RCC>

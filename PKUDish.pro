@@ -10,18 +10,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    browsetab.cpp \
     dish.cpp \
     dishbox.cpp \
     dishes.cpp \
     dishfilehandler.cpp \
     main.cpp \
     mainwindow.cpp \
-    tab1.cpp \
     randomtab.cpp \
     randdish.cpp \
     tags.cpp
 
 HEADERS += \
+    browsetab.h \
     dish.h \
     dishbox.h \
     dishes.h \
@@ -29,12 +30,11 @@ HEADERS += \
     mainwindow.h \
     randomtab.h \
     randdish.h \
-    tags.h \
-    tab1.h
+    tags.h
 
 FORMS += \
+    browsetab.ui \
     mainwindow.ui \
-    tab1.ui \
     dishbox.ui \
     mainwindow.ui \
     randomtab.ui
