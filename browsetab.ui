@@ -10,55 +10,57 @@
     <height>369</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="label">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="2">
+      <widget class="QComboBox" name="comboBox_tags"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="lineEdit_search"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QComboBox" name="comboBox_canteen"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_price"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_canteen">
        <property name="text">
-        <string>食堂位置</string>
+        <string>食堂</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="label_2">
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_price">
        <property name="text">
         <string>价格</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="label_3">
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_tags">
        <property name="text">
         <string>标签</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="label_4">
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_search">
        <property name="text">
         <string>搜索</string>
        </property>
       </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QComboBox" name="comboBox"/>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBox_2"/>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBox_3"/>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit"/>
      </item>
     </layout>
    </item>
@@ -73,10 +75,10 @@
         <x>0</x>
         <y>0</y>
         <width>619</width>
-        <height>281</height>
+        <height>283</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2"/>
+      <layout class="QGridLayout" name="gridLayout_scroll"/>
      </widget>
     </widget>
    </item>

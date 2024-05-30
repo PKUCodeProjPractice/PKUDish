@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "randomtab.h"
-#include "tab1.h"
+#include "browsetab.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

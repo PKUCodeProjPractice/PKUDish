@@ -20,10 +20,9 @@ void DishBox::setDish(const Dish &dish)
     ui->name->setText(dish.name);
     ui->canteen->setText(getCanteenName(dish.canteen));
     ui->price->setText(QString::number(dish.price));
-    QTextStream tags;
+    QString tags;
+    QTextStream stream(&tags);
     foreach (const DishTag *tag, dish.tags)
-        tags << tag->toString() << " ";
-    QString tagsStr;
-    tags >> tagsStr;
-    ui->tags->setText(tagsStr);
+        stream << tag->toString() << " ";
+    ui->tags->setText(tags);
 }

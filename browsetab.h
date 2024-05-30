@@ -1,7 +1,10 @@
-﻿#ifndef TAB1_H
-#define TAB1_H
+﻿#ifndef BROWSETAB_H
+#define BROWSETAB_H
 
 #include <QWidget>
+#include <QVector>
+#include "dishes.h"
+#include "dishbox.h"
 
 namespace Ui {
 class BrowseTab;
@@ -15,8 +18,13 @@ public:
     explicit BrowseTab(QWidget *parent = nullptr);
     ~BrowseTab();
 
+    void setDishes(const Dishes &d);
+    void updateView();
+
 private:
     Ui::BrowseTab *ui;
+    Dishes dishes;
+    QVector<DishBox *> boxes;
 };
 
-#endif // TAB1_H
+#endif // BROWSETAB_H
