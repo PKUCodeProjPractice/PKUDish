@@ -77,22 +77,48 @@ void BrowseTab::updateView(const Dishes &d)
 
 void BrowseTab::on_pushButton_search_clicked()
 {
-    // query
-    QString query = ui->lineEdit_search->text();
-    Dishes result;
-    if (query.size())
-        result = this->dishes.searchInName(query);
-    else
-        result = dishes;
-
-    // price
+    QString query = ui->lineEdit_search->text().trimmed();
     double lwr = ui->doubleSpinBox_lwr->value();
     double upr = ui->doubleSpinBox_upr->value();
-    result = result.filterPrice(lwr, upr);
+
+    QSet<Canteen> canteens;
+    foreach (const auto &key, canteenCheck.keys())
+    {
+        if (canteenCheck.value(key)->isChecked())
+            canteens.insert(key);
+    }
+    QSet<DishKind> kinds;
+    foreach (const auto &key, dishKindCheck.keys())
+    {
+        if (dishKindCheck.value(key)->isChecked())
+            kinds.insert(key);
+    }
+    QSet<DishTaste> tastes;
+    foreach (const auto &key, dishTasteCheck.keys())
+    {
+        if (dishTasteCheck.value(key)->isChecked())
+            tastes.insert(key);
+    }
+
+    auto pred = [&](const Dish &d) -> bool
+    {
+        if (query.size() && !matches(query, d.name, MatchMode::CONTAINS_ANY) ||
+            d.price > upr || d.price < lwr ||
+            !canteens.contains(d.canteen) ||
+            !tastes.contains(d.getTaste()))
+            return false;
+        foreach (const DishTag *tag, d.tags)
+        {
+            if (tag->kind == TagKind::KIND &&
+                kinds.contains(NAME_DISHKIND.value(tag->toString())))
+                return true;
+        }
+        return false;
+    };
+    Dishes result = dishes.filterGeneral(pred);
+
     bool ascending = ui->comboBox_order->currentIndex() == 1;
     result.sortByPrice(ascending);
-
-    // tags TODO
 
     // update
     updateView(result);

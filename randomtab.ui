@@ -159,6 +159,9 @@
    </item>
    <item>
     <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -167,8 +170,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>676</width>
-        <height>337</height>
+        <width>674</width>
+        <height>328</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout"/>
