@@ -16,7 +16,7 @@ BrowseTab::BrowseTab(QWidget *parent)
     {
         QCheckBox *check = new QCheckBox(value);
         check->setChecked(true);
-        ui->layout_canteen->addWidget(check, cnt / 5, cnt % 5);
+        ui->layout_canteen->addWidget(check, cnt / 6, cnt % 6);
         this->canteenCheck.insert(NAME_CANTEEN.value(value), check);
         cnt += 1;
     }
