@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     Dishes dishes;
     try
     {
-        DishFileHandler::read("://assets/data/dishes.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
     }
     catch (const DishFileException &e)
     {
