@@ -40,19 +40,17 @@ void appendDishChoice(Dishes & res, Dishes & dishes, const QString & tag, Cantee
 
 Dishes randChoice(Dishes & dishes, const RandConfig & config){
     // 首先先进行针对单菜品的筛选
-    Dishes filt;
+    Dishes filt = dishes;
     // 等待时间
     if(config.no_wait){
         Dishes rev = dishes.searchInTags("需要等待");
-        filt = dishes;
         for(const Dish & d:rev.getAllDishes()){
             dishes.remove(d.id);
         }
-    }else{
-        filt = dishes;
     }
     // 接着根据辣度筛选
     filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.getTaste() < config.upper_spicy or d.getTaste() == config.upper_spicy;});
+    cout << filt.size() << endl;
     // 还有菜品价格
     // TODO: 这个菜品价格有点问题，它筛的是单品
     filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.price >= config.total_price_lower and d.price <= config.total_price_upper;});
