@@ -1,4 +1,4 @@
-#include"tags.h"
+﻿#include"tags.h"
 
 /*bool operator<(const DishTaste & a, const DishTaste & b){
     switch(a){
@@ -61,6 +61,7 @@ QMap<QString, DishTag*> predefine_tags = {
     {"烧烤", &DISHKINDTAG_SHAOKAO},
     {"甜点", &DISHKINDTAG_TIANDIAN},
     {"肉", &DISHKINDTAG_ROU},
+    {"荤", &DISHKINDTAG_ROU},
     {"素", &DISHKINDTAG_CAI},
 
     {"辣", &DISHTASTETAG_MISPICY},
