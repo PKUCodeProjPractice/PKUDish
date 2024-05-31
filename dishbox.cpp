@@ -1,6 +1,7 @@
 ﻿#include "dishbox.h"
 #include "ui_dishbox.h"
 #include <QTextStream>
+#include <QGraphicsScene>
 #include "tags.h"
 
 DishBox::DishBox(QWidget *parent)
@@ -17,6 +18,13 @@ DishBox::~DishBox()
 
 void DishBox::setDish(const Dish &dish)
 {
+    // picture
+    QPixmap pixmp("://assets/icons/dish.png");  // todo
+    QGraphicsScene *scene = new QGraphicsScene;
+    scene->addPixmap(pixmp);
+    ui->picture->setScene(scene);
+
+    // text
     ui->textBrowser->setText(dish.name);
     ui->textBrowser->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
