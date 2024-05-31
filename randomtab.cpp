@@ -26,6 +26,10 @@ RandomTab::RandomTab(QWidget *parent)
         ui->comboBox_canteen->addItem(iter.key());
     }
 
+    for(auto iter = DISHTASTE_NAME.begin(); iter != DISHTASTE_NAME.end(); ++iter){
+        ui->comboBox_spicy->addItem(iter.value());
+    }
+
     connect(ui->reset, &QPushButton::clicked, [&](){controller.view_reset();});
     connect(ui->confirm, &QPushButton::clicked, [&](){controller.random_choice();});
 
@@ -45,6 +49,10 @@ void RandomTab::reset(){
     // 初始化菜品类型
     ui->radioButton_single->setChecked(true);
     ui->radioButton_set->setChecked(false);
+    // 初始化辣度列表
+    ui->comboBox_spicy->setCurrentIndex(ui->comboBox_spicy->count() - 1);
+    // 初始化容忍等待
+    ui->checkBox_nowait->setChecked(true);
     // 清空之前的菜品
     dish_reset();
 }
@@ -71,6 +79,8 @@ RandConfig RandomTab::dumpConfig(){
     config.total_price_upper = ui->doubleSpinBox_priceUpr->value();
     config.has_pack = ui->radioButton_set->isChecked();
     config.has_main = config.has_meat = config.has_vege = ui->radioButton_single->isChecked();
+    config.no_wait = not ui->checkBox_nowait->isChecked();
+    config.upper_spicy = NAME_DISHTASTE[ui->comboBox_spicy->currentText()];
     return config;
 }
 
