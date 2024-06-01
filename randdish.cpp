@@ -1,6 +1,7 @@
 #include<optional>
 #include<random>
 #include"randdish.h"
+#include<iostream>
 using namespace std;
 
 // 不在头文件中

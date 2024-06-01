@@ -93,7 +93,7 @@ void BrowseTab::on_pushButton_search_clicked()
     result.sortByPrice(ascending);
 
     // tags TODO
-
+   
     // update
     updateView(result);
 }
