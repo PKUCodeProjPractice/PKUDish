@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>378</width>
-    <height>160</height>
+    <width>336</width>
+    <height>156</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,24 +22,28 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QTextBrowser" name="textBrowser">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>40</height>
-        </size>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
        </property>
        <property name="maximumSize">
         <size>
-         <width>240</width>
-         <height>40</height>
+         <width>16777215</width>
+         <height>68</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>17</pointsize>
          <bold>true</bold>
+         <underline>false</underline>
         </font>
        </property>
        <property name="frameShape">
@@ -49,18 +53,21 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QTextBrowser" name="canteen">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>40</height>
-          </size>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>3</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
          <property name="maximumSize">
           <size>
-           <width>120</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>35</height>
           </size>
          </property>
          <property name="font">
@@ -78,16 +85,16 @@
          <property name="enabled">
           <bool>true</bool>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
          <property name="maximumSize">
           <size>
-           <width>80</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>35</height>
           </size>
          </property>
          <property name="font">
@@ -107,21 +114,22 @@
      </item>
      <item>
       <widget class="QTextBrowser" name="tags">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>40</height>
-        </size>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
        <property name="maximumSize">
         <size>
-         <width>240</width>
-         <height>40</height>
+         <width>16777215</width>
+         <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Microsoft YaHei UI</family>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="frameShape">
@@ -141,18 +149,36 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>128</width>
-       <height>138</height>
+       <width>130</width>
+       <height>130</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>128</width>
-       <height>138</height>
+       <width>130</width>
+       <height>130</height>
       </size>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="interactive">
+      <bool>false</bool>
      </property>
     </widget>
    </item>

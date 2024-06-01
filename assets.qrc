@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>assets/data/dishes.txt</file>
         <file>assets/data/dishes.csv</file>
+        <file>assets/icons/main-icon.svg</file>
+        <file>assets/icons/dish.png</file>
+        <file>assets/data/dishes-jia2.csv</file>
     </qresource>
 </RCC>

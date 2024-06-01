@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("PKUDish");
     this->setFixedSize(800, 600);
 
     browseTab = new BrowseTab();
@@ -21,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     Dishes dishes;
     try
     {
-        DishFileHandler::read("://assets/data/dishes.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
     }
     catch (const DishFileException &e)
     {
