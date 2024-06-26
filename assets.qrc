@@ -4,5 +4,31 @@
         <file>assets/icons/dish.png</file>
         <file>assets/data/dishes-jia2.csv</file>
         <file>assets/data/dishes-nong2.csv</file>
+        <file>assets/pictures/60.png</file>
+        <file>assets/pictures/113.png</file>
+        <file>assets/pictures/118.png</file>
+        <file>assets/pictures/124.png</file>
+        <file>assets/pictures/126.png</file>
+        <file>assets/pictures/145.png</file>
+        <file>assets/pictures/149.png</file>
+        <file>assets/pictures/155.png</file>
+        <file>assets/pictures/182.png</file>
+        <file>assets/pictures/185.png</file>
+        <file>assets/pictures/186.png</file>
+        <file>assets/pictures/197.png</file>
+        <file>assets/pictures/204.png</file>
+        <file>assets/pictures/213.png</file>
+        <file>assets/pictures/224.png</file>
+        <file>assets/pictures/230.png</file>
+        <file>assets/pictures/258.png</file>
+        <file>assets/pictures/259.png</file>
+        <file>assets/pictures/263.png</file>
+        <file>assets/pictures/264.png</file>
+        <file>assets/pictures/290.png</file>
+        <file>assets/pictures/292.png</file>
+        <file>assets/pictures/302.png</file>
+        <file>assets/pictures/320.png</file>
+        <file>assets/pictures/330.png</file>
+        <file>assets/pictures/334.png</file>
     </qresource>
 </RCC>
