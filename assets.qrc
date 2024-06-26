@@ -4,33 +4,56 @@
         <file>assets/icons/dish.png</file>
         <file>assets/data/dishes-jia2.csv</file>
         <file>assets/data/dishes-nong2.csv</file>
-        <file>assets/pictures/60.png</file>
-        <file>assets/pictures/113.png</file>
-        <file>assets/pictures/118.png</file>
-        <file>assets/pictures/124.png</file>
-        <file>assets/pictures/126.png</file>
-        <file>assets/pictures/145.png</file>
-        <file>assets/pictures/149.png</file>
-        <file>assets/pictures/155.png</file>
-        <file>assets/pictures/182.png</file>
-        <file>assets/pictures/185.png</file>
-        <file>assets/pictures/186.png</file>
-        <file>assets/pictures/197.png</file>
-        <file>assets/pictures/204.png</file>
-        <file>assets/pictures/213.png</file>
-        <file>assets/pictures/224.png</file>
-        <file>assets/pictures/230.png</file>
-        <file>assets/pictures/258.png</file>
-        <file>assets/pictures/259.png</file>
-        <file>assets/pictures/263.png</file>
-        <file>assets/pictures/264.png</file>
-        <file>assets/pictures/290.png</file>
-        <file>assets/pictures/292.png</file>
-        <file>assets/pictures/302.png</file>
-        <file>assets/pictures/320.png</file>
-        <file>assets/pictures/330.png</file>
-        <file>assets/pictures/334.png</file>
+        <file>assets/imgs/107.png</file>
+        <file>assets/imgs/113.png</file>
+        <file>assets/imgs/118.png</file>
+        <file>assets/imgs/124.png</file>
+        <file>assets/imgs/126.png</file>
+        <file>assets/imgs/145.png</file>
+        <file>assets/imgs/149.png</file>
+        <file>assets/imgs/155.png</file>
+        <file>assets/imgs/182.png</file>
+        <file>assets/imgs/185.png</file>
+        <file>assets/imgs/186.png</file>
+        <file>assets/imgs/197.png</file>
+        <file>assets/imgs/204.png</file>
+        <file>assets/imgs/213.png</file>
+        <file>assets/imgs/224.png</file>
+        <file>assets/imgs/230.png</file>
+        <file>assets/imgs/258.png</file>
+        <file>assets/imgs/259.png</file>
+        <file>assets/imgs/263.png</file>
+        <file>assets/imgs/264.png</file>
+        <file>assets/imgs/290.png</file>
+        <file>assets/imgs/292.png</file>
+        <file>assets/imgs/302.png</file>
+        <file>assets/imgs/320.png</file>
+        <file>assets/imgs/330.png</file>
+        <file>assets/imgs/334.png</file>
         <file>assets/icons/browsetag3.png</file>
         <file>assets/icons/random2.png</file>
+        <file>assets/imgs/401.png</file>
+        <file>assets/imgs/402.png</file>
+        <file>assets/imgs/407.png</file>
+        <file>assets/imgs/412.png</file>
+        <file>assets/imgs/414.png</file>
+        <file>assets/imgs/416.png</file>
+        <file>assets/imgs/417.png</file>
+        <file>assets/imgs/418.png</file>
+        <file>assets/imgs/420.png</file>
+        <file>assets/imgs/423.png</file>
+        <file>assets/imgs/424.png</file>
+        <file>assets/imgs/430.png</file>
+        <file>assets/imgs/432.png</file>
+        <file>assets/imgs/433.png</file>
+        <file>assets/imgs/436.png</file>
+        <file>assets/imgs/443.png</file>
+        <file>assets/imgs/447.png</file>
+        <file>assets/imgs/450.png</file>
+        <file>assets/imgs/458.png</file>
+        <file>assets/imgs/460.png</file>
+        <file>assets/imgs/466.png</file>
+        <file>assets/imgs/469.png</file>
+        <file>assets/data/dishes-jia1.csv</file>
     </qresource>
 </RCC>

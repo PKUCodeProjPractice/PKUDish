@@ -3,6 +3,7 @@
 #include "dishbox.h"
 #include "dish.h"
 #include "tags.h"
+#include <algorithm>
 #include <QCheckBox>
 
 BrowseTab::BrowseTab(QWidget *parent)
@@ -45,33 +46,53 @@ BrowseTab::BrowseTab(QWidget *parent)
 BrowseTab::~BrowseTab()
 {
     delete ui;
+    foreach (DishBox *db, boxes)
+    {
+        delete db;
+    }
 }
 
 void BrowseTab::setDishes(const Dishes &d)
 {
     dishes = d;
-    updateView(dishes);
+    initBoxes();
+    updateView(boxes);
 }
 
-void BrowseTab::updateView(const Dishes &d)
+void BrowseTab::updateView(QVector<DishBox *> &bxs)
 {
+    qDebug() << "remove widgets start, size =" << ui->gridLayout_scroll->count();
     QLayoutItem *w;
     while ((w = ui->gridLayout_scroll->takeAt(0)) != 0)
     {
         if (w->widget())
             w->widget()->setParent(NULL);
-        delete w;
     }
+    qDebug() << "remove widgets end";
 
+    qDebug() << "add widgets start";
     int cnt = 0;
-    foreach (const Dish &dish, d.getAllDishes())
+    foreach (DishBox *db, bxs)
     {
-        DishBox *db = new DishBox(this);
-        db->setDish(dish);
         ui->gridLayout_scroll->addWidget(
             db, cnt / 2, cnt % 2, Qt::AlignCenter
         );
         cnt += 1;
+    }
+    qDebug() << "add widgets end, size =" << cnt;
+}
+
+void BrowseTab::initBoxes()
+{
+    boxes.clear();
+    foreach (const Dish &dish, dishes.getAllDishes())
+    {
+        DishBox *db = new DishBox(this);
+        db->setDish(dish);
+        if (db->hasPicture())
+            boxes.prepend(db);
+        else
+            boxes.append(db);
     }
 }
 
@@ -115,10 +136,35 @@ void BrowseTab::on_pushButton_search_clicked()
         }
         return false;
     };
-    Dishes result = dishes.filterGeneral(pred);
 
+    // Dishes result = dishes.filterGeneral(pred);
+    qDebug() << "filter begin";
+    QVector<DishBox *> result;
+    foreach (DishBox *db, boxes)
+    {
+        if (pred(db->getDish()))
+            result.append(db);
+    }
+    qDebug() << "filter end, size =" << result.size();
+
+    qDebug() << "sort begin";
     bool ascending = ui->comboBox_order->currentIndex() == 1;
-    result.sortByPrice(ascending);
+    // result.sortByPrice(ascending);
+    if (ascending)
+        std::sort(
+            result.begin(), result.end(),
+            [](const DishBox *db1, const DishBox *db2) {
+                return (db1->getDish().price < db2->getDish().price);
+            }
+        );
+    else
+        std::sort(
+            result.begin(), result.end(),
+            [](const DishBox *db1, const DishBox *db2) {
+                return (db1->getDish().price > db2->getDish().price);
+            }
+        );
+    qDebug() << "sort end";
 
     // update
     updateView(result);

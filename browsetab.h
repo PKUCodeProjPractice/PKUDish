@@ -23,7 +23,6 @@ public:
     ~BrowseTab();
 
     void setDishes(const Dishes &d);
-    void updateView(const Dishes &d);
 
 private slots:
     void on_pushButton_search_clicked();
@@ -42,6 +41,9 @@ private:
     QMap<Canteen, QCheckBox *> canteenCheck;
     QMap<DishKind, QCheckBox *> dishKindCheck;
     QMap<DishTaste, QCheckBox *> dishTasteCheck;
+
+    void initBoxes();
+    void updateView(QVector<DishBox *> &bxs);
 };
 
 #endif // BROWSETAB_H

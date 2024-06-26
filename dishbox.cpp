@@ -24,6 +24,7 @@ DishBox::DishBox(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DishBox)
     , hovered(false)
+    , picture(false)
 {
     ui->setupUi(this);
     this->setAttribute(Qt::WA_Hover, true);
@@ -35,14 +36,21 @@ DishBox::~DishBox()
     delete ui;
 }
 
-void DishBox::setDish(const Dish &dish)
+void DishBox::setDish(const Dish &d)
 {
+    this->dish = d;
+
     // picture
     QString filepath;
     QTextStream(&filepath)<<"://assets/imgs/"<<dish.id<<".png";
     QPixmap pixmp = QPixmap(filepath);
     if (pixmp.isNull())
         pixmp.load("://assets/icons/dish.png");
+    else
+    {
+        pixmp = pixmp.scaledToHeight(130);
+        picture = true;
+    }
 
     QGraphicsScene *scene = new QGraphicsScene;
     scene->addPixmap(pixmp);
@@ -80,4 +88,14 @@ void DishBox::setDish(const Dish &dish)
 
     ui->tags->setText(tags);
     ui->tags->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+}
+
+const Dish &DishBox::getDish() const
+{
+    return dish;
+}
+
+bool DishBox::hasPicture() const
+{
+    return picture;
 }
