@@ -20,6 +20,10 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
+   <string notr="true">#frame:!hover{}
+#frame:hover{border:1.5px solid #780000}*{background-color: rgba(255, 255, 255, 0);}</string>
+  </property>
+  <property name="styleSheet">
    <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -51,8 +55,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">line-height:12px;
-background-color: rgba(255, 255, 255, 0);</string>
+        <string notr="true">line-height:12px;</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -83,12 +86,8 @@ background-color: rgba(255, 255, 255, 0);</string>
          </property>
          <property name="font">
           <font>
-           <family>华文新魏</family>
            <pointsize>16</pointsize>
           </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -114,16 +113,11 @@ background-color: rgba(255, 255, 255, 0);</string>
          </property>
          <property name="font">
           <font>
-           <family>华文新魏</family>
            <pointsize>16</pointsize>
-           <italic>false</italic>
           </font>
          </property>
          <property name="acceptDrops">
           <bool>true</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -148,12 +142,9 @@ background-color: rgba(255, 255, 255, 0);</string>
        </property>
        <property name="font">
         <font>
-         <family>华文新魏</family>
+         <family>Microsoft YaHei UI</family>
          <pointsize>13</pointsize>
         </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -181,9 +172,6 @@ background-color: rgba(255, 255, 255, 0);</string>
        <width>130</width>
        <height>130</height>
       </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
