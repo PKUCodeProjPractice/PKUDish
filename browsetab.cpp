@@ -67,6 +67,7 @@ void BrowseTab::updateView(QVector<DishBox *> &bxs)
     {
         if (w->widget())
             w->widget()->setParent(NULL);
+        delete w;
     }
     qDebug() << "remove widgets end";
 

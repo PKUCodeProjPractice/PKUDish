@@ -27,8 +27,6 @@ DishBox::DishBox(QWidget *parent)
     , picture(false)
 {
     ui->setupUi(this);
-    this->setAttribute(Qt::WA_Hover, true);
-    this->installEventFilter(this);
 }
 
 DishBox::~DishBox()
