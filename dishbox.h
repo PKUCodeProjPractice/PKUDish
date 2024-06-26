@@ -21,10 +21,6 @@ public:
     void setDish(const Dish &dish);
 
 protected:
-    bool event(QEvent *event);
-    void hoverEnter(QHoverEvent *event);
-    void hoverLeave(QHoverEvent *event);
-    void paintEvent(QPaintEvent *event);
 
 private:
     Ui::DishBox *ui;
