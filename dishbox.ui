@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -41,14 +44,15 @@
        </property>
        <property name="font">
         <font>
-         <family>Microsoft YaHei UI</family>
+         <family>华文行楷</family>
          <pointsize>17</pointsize>
-         <bold>true</bold>
-         <underline>false</underline>
+         <bold>false</bold>
+         <underline>true</underline>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">line-height:12px;</string>
+        <string notr="true">line-height:12px;
+background-color: rgba(255, 255, 255, 0);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -79,8 +83,12 @@
          </property>
          <property name="font">
           <font>
+           <family>华文新魏</family>
            <pointsize>16</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -106,11 +114,16 @@
          </property>
          <property name="font">
           <font>
+           <family>华文新魏</family>
            <pointsize>16</pointsize>
+           <italic>false</italic>
           </font>
          </property>
          <property name="acceptDrops">
           <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -135,9 +148,12 @@
        </property>
        <property name="font">
         <font>
-         <family>Microsoft YaHei UI</family>
+         <family>华文新魏</family>
          <pointsize>13</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -165,6 +181,9 @@
        <width>130</width>
        <height>130</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>

@@ -210,6 +210,15 @@
    </item>
    <item>
     <widget class="QScrollArea" name="scrollArea">
+     <property name="minimumSize">
+      <size>
+       <width>788</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QScrollArea{background-image: url(:/browsetag3.png);background-attachment:fixed;} </string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::Box</enum>
      </property>
@@ -221,9 +230,12 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>774</width>
-        <height>410</height>
+        <width>784</width>
+        <height>460</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_scroll"/>
      </widget>
