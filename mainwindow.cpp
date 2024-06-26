@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include "dishfilehandler.h"
-#include <QMessageBox>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,10 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
     try
     {
         DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
     }
     catch (const DishFileException &e)
     {
-        QMessageBox::warning(this, "error reading file", e.getMessage());
+        qDebug() << "error reading file:" << e.getMessage();
     }
     browseTab->setDishes(dishes);
     randomTab->setDishes(dishes);
