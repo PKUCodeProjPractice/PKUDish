@@ -30,5 +30,8 @@
         <file>assets/pictures/320.png</file>
         <file>assets/pictures/330.png</file>
         <file>assets/pictures/334.png</file>
+        <file>../../qtImage/browsetag3.png</file>
+        <file>assets/icons/browsetag3.png</file>
+        <file>assets/icons/random2.png</file>
     </qresource>
 </RCC>
