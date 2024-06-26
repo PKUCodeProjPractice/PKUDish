@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>336</width>
-    <height>156</height>
+    <height>159</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -41,13 +41,20 @@
        </property>
        <property name="font">
         <font>
+         <family>Microsoft YaHei UI</family>
          <pointsize>17</pointsize>
          <bold>true</bold>
          <underline>false</underline>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">line-height:12px;</string>
+       </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="lineWrapMode">
+        <enum>QTextEdit::WidgetWidth</enum>
        </property>
       </widget>
      </item>
