@@ -17,7 +17,13 @@
    <iconset resource="assets.qrc">
     <normaloff>:/assets/icons/main-icon.svg</normaloff>:/assets/icons/main-icon.svg</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{background-color:rgb(226, 211, 173)}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
@@ -26,6 +32,14 @@
       <width>800</width>
       <height>600</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabBar{background-color:rgb(231, 216, 177)}
+QTabBar::tab:selected{background-color:rgb(231, 216, 177)}
+QTabBar::tab:!selected{background-color:rgb(209, 195, 106)}
+QTabWidget::pane{border:1bx solid black; background-color:rgba(231,216,177,255)}
+
+</string>
     </property>
     <property name="currentIndex">
      <number>-1</number>
