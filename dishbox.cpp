@@ -38,14 +38,11 @@ DishBox::~DishBox()
 void DishBox::setDish(const Dish &dish)
 {
     // picture
-    QPixmap pixmp;
-    try{
-        QString filepath;
-        QTextStream(&filepath)<<"://assets/imgs/"<<dish.id<<".png";
-        pixmp = QPixmap(filepath);
-    }catch(std::exception e){
-        pixmp = QPixmap("://assets/icons/dish.png");
-    }
+    QString filepath;
+    QTextStream(&filepath)<<"://assets/imgs/"<<dish.id<<".png";
+    QPixmap pixmp = QPixmap(filepath);
+    if (pixmp.isNull())
+        pixmp.load("://assets/icons/dish.png");
 
     QGraphicsScene *scene = new QGraphicsScene;
     scene->addPixmap(pixmp);
