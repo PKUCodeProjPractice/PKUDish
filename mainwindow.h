@@ -19,6 +19,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void loadDishes();
+
 private:
     Ui::MainWindow *ui;
     BrowseTab *browseTab;

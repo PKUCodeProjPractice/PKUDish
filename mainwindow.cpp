@@ -15,8 +15,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->addTab(browseTab, "浏览");
     randomTab = new RandomTab();
     ui->tabWidget->addTab(randomTab, "随机");
+}
 
-    // load dishes
+MainWindow::~MainWindow()
+{
+    delete ui;
+    delete browseTab;
+    delete randomTab;
+}
+
+void MainWindow::loadDishes()
+{
     Dishes dishes;
     try
     {
@@ -30,11 +39,4 @@ MainWindow::MainWindow(QWidget *parent)
     }
     browseTab->setDishes(dishes);
     randomTab->setDishes(dishes);
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-    delete browseTab;
-    delete randomTab;
 }
