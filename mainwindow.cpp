@@ -29,14 +29,14 @@ void MainWindow::loadDishes()
     Dishes dishes;
     try
     {
-        // DishFileHandler::read("://assets/data/dishes-jia1.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-jia1.csv", dishes);
         DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
-        // DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
     }
     catch (const DishFileException &e)
     {
         qDebug() << "error reading file:" << e.getMessage();
     }
-    browseTab->setDishes(dishes);
     randomTab->setDishes(dishes);
+    browseTab->setDishes(dishes);
 }

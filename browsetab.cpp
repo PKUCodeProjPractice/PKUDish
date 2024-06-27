@@ -5,7 +5,6 @@
 #include "tags.h"
 #include <algorithm>
 #include <QCheckBox>
-#include <QSizePolicy>
 
 BrowseTab::BrowseTab(QWidget *parent)
     : QWidget(parent)
@@ -82,6 +81,7 @@ void BrowseTab::updateView(QVector<DishBox *> &bxs)
     int cnt = 0;
     foreach (DishBox *db, bxs)
     {
+        db->show();
         ui->gridLayout_scroll->addWidget(
             db, cnt / 2, cnt % 2, Qt::AlignCenter
         );
@@ -111,6 +111,7 @@ void BrowseTab::initBoxes()
     foreach (const Dish &dish, dishes.getAllDishes())
     {
         DishBox *db = new DishBox(this);
+        db->hide();
         db->setDish(dish);
         if (db->hasPicture())
             boxes.prepend(db);
@@ -126,7 +127,10 @@ void BrowseTab::clearView()
     while ((w = ui->gridLayout_scroll->takeAt(0)) != 0)
     {
         if (w->widget())
+        {
             w->widget()->setParent(NULL);
+            w->widget()->hide();
+        }
         delete w;
         QCoreApplication::processEvents();
     }
