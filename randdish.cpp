@@ -16,11 +16,12 @@ optional<Dish> randChoiceOneFromTag(Dishes & dishes, const QString & tag, Cantee
     }
     if(filt.size() <= 0) return nullopt;
     filt = filt.searchInTags(tag);
+    cout << filt.size() << endl;
     if(filt.size() <= 0) return nullopt;
     uniform_int_distribution distrib(0, filt.size());
     gen.seed(time(0));
     distrib(gen); // 我也不知道为啥一定得先吐出来一个数才能做到随机
-    Dish choice = dishes.getAllDishes()[distrib(gen)];
+    Dish choice = filt.getAllDishes()[distrib(gen)];
     if(canteen == CANTEEN_UNDEF){
         canteen = choice.canteen;
     }
