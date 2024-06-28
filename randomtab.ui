@@ -160,7 +160,9 @@
    <item>
     <widget class="QScrollArea" name="scrollArea">
      <property name="styleSheet">
-      <string notr="true">#scrollAreaWidgetContents{background-image: url(:/random2.png)}</string>
+      <string notr="true">#scrollAreaWidgetContents{
+background-image: url(:/assets/icons/random2.png)
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -173,8 +175,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>784</width>
-        <height>479</height>
+        <width>774</width>
+        <height>428</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout"/>

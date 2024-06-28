@@ -15,20 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->addTab(browseTab, "浏览");
     randomTab = new RandomTab();
     ui->tabWidget->addTab(randomTab, "随机");
-
-    // load dishes
-    Dishes dishes;
-    try
-    {
-        DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
-        DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
-    }
-    catch (const DishFileException &e)
-    {
-        qDebug() << "error reading file:" << e.getMessage();
-    }
-    browseTab->setDishes(dishes);
-    randomTab->setDishes(dishes);
 }
 
 MainWindow::~MainWindow()
@@ -36,4 +22,21 @@ MainWindow::~MainWindow()
     delete ui;
     delete browseTab;
     delete randomTab;
+}
+
+void MainWindow::loadDishes()
+{
+    Dishes dishes;
+    try
+    {
+        DishFileHandler::read("://assets/data/dishes-jia1.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
+    }
+    catch (const DishFileException &e)
+    {
+        qDebug() << "error reading file:" << e.getMessage();
+    }
+    randomTab->setDishes(dishes);
+    browseTab->setDishes(dishes);
 }

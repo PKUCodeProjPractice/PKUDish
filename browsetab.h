@@ -2,6 +2,7 @@
 #define BROWSETAB_H
 
 #include <QMap>
+#include <QLabel>
 #include <QWidget>
 #include <QVector>
 #include <QCheckBox>
@@ -23,9 +24,9 @@ public:
     ~BrowseTab();
 
     void setDishes(const Dishes &d);
-    void updateView(const Dishes &d);
 
 private slots:
+
     void on_pushButton_search_clicked();
 
     void on_comboBox_order_currentIndexChanged(int index);
@@ -36,12 +37,19 @@ private slots:
 
 private:
     Ui::BrowseTab *ui;
+    QLabel *loadingLabel;
+
     Dishes dishes;
     QVector<DishBox *> boxes;
 
     QMap<Canteen, QCheckBox *> canteenCheck;
     QMap<DishKind, QCheckBox *> dishKindCheck;
     QMap<DishTaste, QCheckBox *> dishTasteCheck;
+
+    void initBoxes();
+    void clearView();
+    void updateView(QVector<DishBox *> &bxs);
+    void setLoading(bool loading);
 };
 
 #endif // BROWSETAB_H

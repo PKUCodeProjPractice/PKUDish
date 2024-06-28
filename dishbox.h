@@ -19,12 +19,16 @@ public:
     ~DishBox();
 
     void setDish(const Dish &dish);
+    const Dish& getDish() const;
+    bool hasPicture() const;
 
 protected:
 
 private:
     Ui::DishBox *ui;
+    Dish dish;
     bool hovered;
+    bool picture;
 };
 
 #endif // DISHBOX_H
