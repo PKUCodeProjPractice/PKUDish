@@ -2,6 +2,8 @@
 #define DISHBOX_H
 
 #include <QWidget>
+#include <QEvent>
+#include <QHoverEvent>
 #include "dish.h"
 
 namespace Ui {
@@ -18,8 +20,11 @@ public:
 
     void setDish(const Dish &dish);
 
+protected:
+
 private:
     Ui::DishBox *ui;
+    bool hovered;
 };
 
 #endif // DISHBOX_H

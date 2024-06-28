@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../qt素材图/background.png</file>
+        <file>../../qt素材图/background_random.png</file>
+    </qresource>
+</RCC>
