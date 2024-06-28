@@ -54,12 +54,6 @@ void DishBox::setDish(const Dish &d)
     scene->addPixmap(pixmp);
     ui->picture->setScene(scene);
 
-    // background
-    QPalette pal = QPalette();
-    pal.setColor(QPalette::Window, QColor(255, 255, 255));
-    this->setAutoFillBackground(true);
-    this->setPalette(pal);
-
     // text
     ui->textBrowser->setText(dish.name);
     ui->textBrowser->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
