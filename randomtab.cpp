@@ -97,3 +97,12 @@ void RandomTab::show_dishes(const Dishes & dishes){
         cnt += 1;
     }
 }
+
+void RandomTab::keyPressEvent(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_Enter:
+    case Qt::Key_Return:{
+        controller.random_choice();
+    }break;
+    }
+}
