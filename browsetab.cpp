@@ -223,3 +223,11 @@ void BrowseTab::on_doubleSpinBox_upr_valueChanged(double upr)
     ui->doubleSpinBox_lwr->setMaximum(upr);
 }
 
+void BrowseTab::keyPressEvent(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_Enter:
+    case Qt::Key_Return:{
+        on_pushButton_search_clicked();
+    }break;
+    }
+}

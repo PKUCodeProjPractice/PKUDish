@@ -60,10 +60,20 @@ void DishFileHandler::readTXT(const QString &path, Dishes &dishes)
         if (strs.empty()) continue;
         d.name = strs.takeFirst();
 
-        if (strs.empty()) DishFileException("文件内容格式错误").raise();
+        if (strs.empty()) {
+            QString errmsg;
+            QTextStream ss(&errmsg);
+            ss << "文件内容格式错误: 价格缺失" << path;
+            DishFileException(errmsg).raise();
+        }
         d.price = strs.takeFirst().toFloat(&ok);
 
-        if (strs.empty() || !ok) DishFileException("文件内容格式错误").raise();
+        if (strs.empty() || !ok) {
+            QString errmsg;
+            QTextStream ss(&errmsg);
+            ss << "文件内容格式错误: 食堂缺失" << path;
+            DishFileException(errmsg).raise();
+        }
         d.canteen = getCanteenFromName(strs.takeFirst());
 
         if (!strs.empty())
@@ -115,6 +125,7 @@ void DishFileHandler::readCSV(const QString &path, Dishes & dishes)
     }
 
     QTextStream in(&file);
+    int row = 0;
     while (!in.atEnd())
     {
         Dish d;
@@ -125,13 +136,28 @@ void DishFileHandler::readCSV(const QString &path, Dishes & dishes)
         if (strs.empty()) continue;
         d.id = strs.takeFirst().toInt(&ok);
 
-        if (strs.empty() || !ok) DishFileException("文件内容格式错误").raise();
+        if (strs.empty() || !ok) {
+            QString errmsg;
+            QTextStream ss(&errmsg);
+            ss << "文件内容格式错误: 名字缺失 " << path << ' ' << d.id << ' ' << row;
+            DishFileException(errmsg).raise();
+        }
         d.name = strs.takeFirst();
 
-        if (strs.empty()) DishFileException("文件内容格式错误").raise();
+        if (strs.empty()) {
+            QString errmsg;
+            QTextStream ss(&errmsg);
+            ss << "文件内容格式错误: 价格缺失 " << path << ' ' << d.id << ' ' << row;
+            DishFileException(errmsg).raise();
+        }
         d.price = strs.takeFirst().toFloat(&ok);
 
-        if (strs.empty() || !ok) DishFileException("文件内容格式错误").raise();
+        if (strs.empty() || !ok) {
+            QString errmsg;
+            QTextStream ss(&errmsg);
+            ss << "文件内容格式错误: 食堂缺失 " << path << ' ' << d.id << ' ' << row;
+            DishFileException(errmsg).raise();
+        }
         d.canteen = getCanteenFromName(strs.takeFirst());
 
         if (!strs.empty())
@@ -151,6 +177,7 @@ void DishFileHandler::readCSV(const QString &path, Dishes & dishes)
             }
         }
         dishes.append(d);
+        ++row;
     }
 }
 

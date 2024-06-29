@@ -1,9 +1,14 @@
 <RCC>
     <qresource prefix="/">
-        <file>assets/icons/main-icon.svg</file>
-        <file>assets/icons/dish.png</file>
+        <file>assets/data/dishes-jia1.csv</file>
         <file>assets/data/dishes-jia2.csv</file>
+        <file>assets/data/dishes-nong1.csv</file>
         <file>assets/data/dishes-nong2.csv</file>
+        <file>assets/icons/browsetag3.png</file>
+        <file>assets/icons/dish-original.png</file>
+        <file>assets/icons/dish.png</file>
+        <file>assets/icons/main-icon.svg</file>
+        <file>assets/icons/random2.png</file>
         <file>assets/imgs/107.png</file>
         <file>assets/imgs/113.png</file>
         <file>assets/imgs/118.png</file>
@@ -16,46 +21,6 @@
         <file>assets/imgs/185.png</file>
         <file>assets/imgs/186.png</file>
         <file>assets/imgs/197.png</file>
-        <file>assets/imgs/204.png</file>
-        <file>assets/imgs/213.png</file>
-        <file>assets/imgs/224.png</file>
-        <file>assets/imgs/230.png</file>
-        <file>assets/imgs/258.png</file>
-        <file>assets/imgs/259.png</file>
-        <file>assets/imgs/263.png</file>
-        <file>assets/imgs/264.png</file>
-        <file>assets/imgs/290.png</file>
-        <file>assets/imgs/292.png</file>
-        <file>assets/imgs/302.png</file>
-        <file>assets/imgs/320.png</file>
-        <file>assets/imgs/330.png</file>
-        <file>assets/imgs/334.png</file>
-        <file>assets/icons/browsetag3.png</file>
-        <file>assets/icons/random2.png</file>
-        <file>assets/imgs/401.png</file>
-        <file>assets/imgs/402.png</file>
-        <file>assets/imgs/407.png</file>
-        <file>assets/imgs/412.png</file>
-        <file>assets/imgs/414.png</file>
-        <file>assets/imgs/416.png</file>
-        <file>assets/imgs/417.png</file>
-        <file>assets/imgs/418.png</file>
-        <file>assets/imgs/420.png</file>
-        <file>assets/imgs/423.png</file>
-        <file>assets/imgs/424.png</file>
-        <file>assets/imgs/430.png</file>
-        <file>assets/imgs/432.png</file>
-        <file>assets/imgs/433.png</file>
-        <file>assets/imgs/436.png</file>
-        <file>assets/imgs/443.png</file>
-        <file>assets/imgs/447.png</file>
-        <file>assets/imgs/450.png</file>
-        <file>assets/imgs/458.png</file>
-        <file>assets/imgs/460.png</file>
-        <file>assets/imgs/466.png</file>
-        <file>assets/imgs/469.png</file>
-        <file>assets/data/dishes-jia1.csv</file>
-        <file>assets/data/dishes-nong1.csv</file>
         <file>assets/imgs/2014.png</file>
         <file>assets/imgs/2015.png</file>
         <file>assets/imgs/2020.png</file>
@@ -63,6 +28,7 @@
         <file>assets/imgs/2027.png</file>
         <file>assets/imgs/2033.png</file>
         <file>assets/imgs/2035.png</file>
+        <file>assets/imgs/204.png</file>
         <file>assets/imgs/2042.png</file>
         <file>assets/imgs/2043.png</file>
         <file>assets/imgs/2044.png</file>
@@ -97,6 +63,7 @@
         <file>assets/imgs/2125.png</file>
         <file>assets/imgs/2127.png</file>
         <file>assets/imgs/2129.png</file>
+        <file>assets/imgs/213.png</file>
         <file>assets/imgs/2136.png</file>
         <file>assets/imgs/2137.png</file>
         <file>assets/imgs/2138.png</file>
@@ -106,5 +73,39 @@
         <file>assets/imgs/2145.png</file>
         <file>assets/imgs/2149.png</file>
         <file>assets/imgs/2150.png</file>
+        <file>assets/imgs/224.png</file>
+        <file>assets/imgs/230.png</file>
+        <file>assets/imgs/258.png</file>
+        <file>assets/imgs/259.png</file>
+        <file>assets/imgs/263.png</file>
+        <file>assets/imgs/264.png</file>
+        <file>assets/imgs/290.png</file>
+        <file>assets/imgs/292.png</file>
+        <file>assets/imgs/302.png</file>
+        <file>assets/imgs/320.png</file>
+        <file>assets/imgs/330.png</file>
+        <file>assets/imgs/334.png</file>
+        <file>assets/imgs/401.png</file>
+        <file>assets/imgs/402.png</file>
+        <file>assets/imgs/407.png</file>
+        <file>assets/imgs/412.png</file>
+        <file>assets/imgs/414.png</file>
+        <file>assets/imgs/416.png</file>
+        <file>assets/imgs/417.png</file>
+        <file>assets/imgs/418.png</file>
+        <file>assets/imgs/420.png</file>
+        <file>assets/imgs/423.png</file>
+        <file>assets/imgs/424.png</file>
+        <file>assets/imgs/430.png</file>
+        <file>assets/imgs/432.png</file>
+        <file>assets/imgs/433.png</file>
+        <file>assets/imgs/436.png</file>
+        <file>assets/imgs/443.png</file>
+        <file>assets/imgs/447.png</file>
+        <file>assets/imgs/450.png</file>
+        <file>assets/imgs/458.png</file>
+        <file>assets/imgs/460.png</file>
+        <file>assets/imgs/466.png</file>
+        <file>assets/imgs/469.png</file>
     </qresource>
 </RCC>

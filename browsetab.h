@@ -27,6 +27,8 @@ public:
 
 private slots:
 
+    void keyPressEvent(QKeyEvent *) override;
+
     void on_pushButton_search_clicked();
 
     void on_comboBox_order_currentIndexChanged(int index);
