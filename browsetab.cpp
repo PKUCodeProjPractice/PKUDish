@@ -83,7 +83,6 @@ void BrowseTab::updateView(QVector<DishBox *> &bxs)
         if(cnt % 20 == 0){
             loadingW->setValue(cnt);
         }
-        db->show();
         ui->gridLayout_scroll->addWidget(
             db, cnt / 2, cnt % 2, Qt::AlignCenter
         );

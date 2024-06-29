@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>DishB</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#frame:!hover{}
