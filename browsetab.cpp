@@ -95,7 +95,10 @@ void BrowseTab::updateView(QVector<DishBox *> &bxs)
 
 void BrowseTab::setLoading(bool loading)
 {
-    if(loading)loadingW->move(ui->scrollArea->mapToParent(ui->scrollArea->rect().center()) - loadingW->rect().center());
+    if(loading){
+        loadingW->move(ui->scrollArea->mapToParent(ui->scrollArea->rect().center()) - loadingW->rect().center());
+        loadingW->setValue(0);
+    }
     this->loadingW->setVisible(loading);
     ui->scrollArea->setHidden(loading);
     ui->lineEdit_search->setDisabled(loading);
