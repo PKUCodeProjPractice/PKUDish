@@ -87,6 +87,7 @@ void BrowseTab::updateView(QVector<DishBox *> &bxs)
         ui->gridLayout_scroll->addWidget(
             db, cnt / 2, cnt % 2, Qt::AlignCenter
         );
+        db->show();
         cnt += 1;
         QCoreApplication::processEvents();
     }
@@ -114,7 +115,7 @@ void BrowseTab::initBoxes()
     boxes.clear();
     foreach (const Dish &dish, dishes.getAllDishes())
     {
-        DishBox *db = new DishBox(this);
+        DishBox *db = new DishBox();
         db->hide();
         db->setDish(dish);
         if (db->hasPicture())
@@ -191,7 +192,7 @@ void BrowseTab::on_pushButton_search_clicked()
             result.append(db);
     }
 
-    bool ascending = ui->comboBox_order->currentIndex() == 1;
+    bool ascending = ui->comboBox_order->currentIndex() == 0;
     // result.sortByPrice(ascending);
     if (ascending)
         std::sort(

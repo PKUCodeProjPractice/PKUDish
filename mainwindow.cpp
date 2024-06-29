@@ -31,6 +31,7 @@ void MainWindow::loadDishes()
     {
         DishFileHandler::read("://assets/data/dishes-jia1.csv", dishes);
         DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
+        DishFileHandler::read("://assets/data/dishes-nong1.csv", dishes);
         DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
         DishFileHandler::read("://assets/data/dishes-nong1.csv", dishes);
     }
