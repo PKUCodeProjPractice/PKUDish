@@ -48,17 +48,14 @@ BrowseTab::BrowseTab(QWidget *parent)
         cnt += 1;
     }
 
-    // loading label
-    loadingLabel = new QLabel(this);
-    loadingLabel->setText(tr("加载菜品..."));
-    loadingLabel->setStyleSheet("QLabel { color: #780000; font-size: 28px; }");
-    loadingLabel->adjustSize();
-    loadingLabel->hide();
+    // loading widget
+    loadingW = new LoadingWidget(this);
+    loadingW->hide();
 }
 
 BrowseTab::~BrowseTab()
 {
-    delete loadingLabel;
+    delete loadingW;
     delete ui;
     foreach (DishBox *db, boxes)
     {
@@ -79,8 +76,14 @@ void BrowseTab::setDishes(const Dishes &d)
 void BrowseTab::updateView(QVector<DishBox *> &bxs)
 {
     int cnt = 0;
+    int target = bxs.length();
+    loadingW->setRange(0, target);
     foreach (DishBox *db, bxs)
     {
+        if(cnt % 20 == 0){
+            loadingW->setValue(cnt);
+        }
+        db->show();
         ui->gridLayout_scroll->addWidget(
             db, cnt / 2, cnt % 2, Qt::AlignCenter
         );
@@ -88,14 +91,16 @@ void BrowseTab::updateView(QVector<DishBox *> &bxs)
         cnt += 1;
         QCoreApplication::processEvents();
     }
+    loadingW->setValue(target);
 }
 
 void BrowseTab::setLoading(bool loading)
 {
-    if (loading)
-        loadingLabel->move(ui->scrollArea->mapToParent(ui->scrollArea->rect().center())
-                           - loadingLabel->rect().center());
-    loadingLabel->setVisible(loading);
+    if(loading){
+        loadingW->move(ui->scrollArea->mapToParent(ui->scrollArea->rect().center()) - loadingW->rect().center());
+        loadingW->setValue(0);
+    }
+    this->loadingW->setVisible(loading);
     ui->scrollArea->setHidden(loading);
     ui->lineEdit_search->setDisabled(loading);
     ui->pushButton_search->setDisabled(loading);

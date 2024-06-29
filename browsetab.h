@@ -6,10 +6,12 @@
 #include <QWidget>
 #include <QVector>
 #include <QCheckBox>
+#include <QProgressBar>
 #include "dish.h"
 #include "dishes.h"
 #include "dishbox.h"
 #include "tags.h"
+#include "loadingwidget.h"
 
 namespace Ui {
 class BrowseTab;
@@ -39,7 +41,7 @@ private slots:
 
 private:
     Ui::BrowseTab *ui;
-    QLabel *loadingLabel;
+    LoadingWidget* loadingW;
 
     Dishes dishes;
     QVector<DishBox *> boxes;
