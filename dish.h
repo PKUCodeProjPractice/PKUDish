@@ -13,7 +13,6 @@
  * const QString CANTEEN_NAME
  * QMap<QString, Canteen> NAME_CANTEEN
  *
- * TODO: 添加食堂的不同层，例如家园一二三层
  */
 enum Canteen{
     CANTEEN_XUE_YI = 0,

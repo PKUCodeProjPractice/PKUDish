@@ -35,7 +35,6 @@ void appendDishChoice(Dishes & res, Dishes & dishes, const QString & tag, Cantee
         res.append(dish.value());
     }else{
         cout << "没有符合要求的菜" << endl;
-        // TODO:这里可能得加个报错，用来在前端显示
     }
 }
 
@@ -51,9 +50,6 @@ Dishes randChoice(Dishes & dishes, const RandConfig & config){
     }
     // 接着根据辣度筛选
     filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.getTaste() < config.upper_spicy or d.getTaste() == config.upper_spicy;});
-    // 还有菜品价格
-    // TODO: 这个菜品价格有点问题，它筛的是单品
-    filt = filt.filterGeneral([&](const Dish & d) -> bool {return d.price >= config.total_price_lower and d.price <= config.total_price_upper;});
     // 选择一个菜品，查看它的食堂; 用第一个菜确定食堂
     cout << filt.size() << endl;
     Dishes res;
