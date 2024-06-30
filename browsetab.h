@@ -6,10 +6,12 @@
 #include <QWidget>
 #include <QVector>
 #include <QCheckBox>
+#include <QProgressBar>
 #include "dish.h"
 #include "dishes.h"
 #include "dishbox.h"
 #include "tags.h"
+#include "loadingwidget.h"
 
 namespace Ui {
 class BrowseTab;
@@ -27,6 +29,8 @@ public:
 
 private slots:
 
+    void keyPressEvent(QKeyEvent *) override;
+
     void on_pushButton_search_clicked();
 
     void on_comboBox_order_currentIndexChanged(int index);
@@ -37,7 +41,7 @@ private slots:
 
 private:
     Ui::BrowseTab *ui;
-    QLabel *loadingLabel;
+    LoadingWidget* loadingW;
 
     Dishes dishes;
     QVector<DishBox *> boxes;

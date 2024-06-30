@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>RandomTab</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>

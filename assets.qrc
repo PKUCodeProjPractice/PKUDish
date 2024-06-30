@@ -1,9 +1,14 @@
 <RCC>
     <qresource prefix="/">
-        <file>assets/icons/main-icon.svg</file>
-        <file>assets/icons/dish.png</file>
+        <file>assets/data/dishes-jia1.csv</file>
         <file>assets/data/dishes-jia2.csv</file>
+        <file>assets/data/dishes-nong1.csv</file>
         <file>assets/data/dishes-nong2.csv</file>
+        <file>assets/icons/browsetag3.png</file>
+        <file>assets/icons/dish-original.png</file>
+        <file>assets/icons/dish.png</file>
+        <file>assets/icons/main-icon.svg</file>
+        <file>assets/icons/random2.png</file>
         <file>assets/imgs/107.png</file>
         <file>assets/imgs/113.png</file>
         <file>assets/imgs/118.png</file>
@@ -16,8 +21,58 @@
         <file>assets/imgs/185.png</file>
         <file>assets/imgs/186.png</file>
         <file>assets/imgs/197.png</file>
+        <file>assets/imgs/2014.png</file>
+        <file>assets/imgs/2015.png</file>
+        <file>assets/imgs/2020.png</file>
+        <file>assets/imgs/2021.png</file>
+        <file>assets/imgs/2027.png</file>
+        <file>assets/imgs/2033.png</file>
+        <file>assets/imgs/2035.png</file>
         <file>assets/imgs/204.png</file>
+        <file>assets/imgs/2042.png</file>
+        <file>assets/imgs/2043.png</file>
+        <file>assets/imgs/2044.png</file>
+        <file>assets/imgs/2045.png</file>
+        <file>assets/imgs/2046.png</file>
+        <file>assets/imgs/2047.png</file>
+        <file>assets/imgs/2054.png</file>
+        <file>assets/imgs/2056.png</file>
+        <file>assets/imgs/2058.png</file>
+        <file>assets/imgs/2059.png</file>
+        <file>assets/imgs/2062.png</file>
+        <file>assets/imgs/2063.png</file>
+        <file>assets/imgs/2067.png</file>
+        <file>assets/imgs/2069.png</file>
+        <file>assets/imgs/2071.png</file>
+        <file>assets/imgs/2073.png</file>
+        <file>assets/imgs/2074.png</file>
+        <file>assets/imgs/2076.png</file>
+        <file>assets/imgs/2089.png</file>
+        <file>assets/imgs/2091.png</file>
+        <file>assets/imgs/2095.png</file>
+        <file>assets/imgs/2097.png</file>
+        <file>assets/imgs/2104.png</file>
+        <file>assets/imgs/2107.png</file>
+        <file>assets/imgs/2108.png</file>
+        <file>assets/imgs/2109.png</file>
+        <file>assets/imgs/2112.png</file>
+        <file>assets/imgs/2119.png</file>
+        <file>assets/imgs/2120.png</file>
+        <file>assets/imgs/2121.png</file>
+        <file>assets/imgs/2123.png</file>
+        <file>assets/imgs/2125.png</file>
+        <file>assets/imgs/2127.png</file>
+        <file>assets/imgs/2129.png</file>
         <file>assets/imgs/213.png</file>
+        <file>assets/imgs/2136.png</file>
+        <file>assets/imgs/2137.png</file>
+        <file>assets/imgs/2138.png</file>
+        <file>assets/imgs/2140.png</file>
+        <file>assets/imgs/2141.png</file>
+        <file>assets/imgs/2143.png</file>
+        <file>assets/imgs/2145.png</file>
+        <file>assets/imgs/2149.png</file>
+        <file>assets/imgs/2150.png</file>
         <file>assets/imgs/224.png</file>
         <file>assets/imgs/230.png</file>
         <file>assets/imgs/258.png</file>
@@ -30,8 +85,6 @@
         <file>assets/imgs/320.png</file>
         <file>assets/imgs/330.png</file>
         <file>assets/imgs/334.png</file>
-        <file>assets/icons/browsetag3.png</file>
-        <file>assets/icons/random2.png</file>
         <file>assets/imgs/401.png</file>
         <file>assets/imgs/402.png</file>
         <file>assets/imgs/407.png</file>
@@ -54,6 +107,5 @@
         <file>assets/imgs/460.png</file>
         <file>assets/imgs/466.png</file>
         <file>assets/imgs/469.png</file>
-        <file>assets/data/dishes-jia1.csv</file>
     </qresource>
 </RCC>

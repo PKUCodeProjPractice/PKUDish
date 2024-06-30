@@ -48,17 +48,14 @@ BrowseTab::BrowseTab(QWidget *parent)
         cnt += 1;
     }
 
-    // loading label
-    loadingLabel = new QLabel(this);
-    loadingLabel->setText(tr("加载菜品..."));
-    loadingLabel->setStyleSheet("QLabel { color: #780000; font-size: 28px; }");
-    loadingLabel->adjustSize();
-    loadingLabel->hide();
+    // loading widget
+    loadingW = new LoadingWidget(this);
+    loadingW->hide();
 }
 
 BrowseTab::~BrowseTab()
 {
-    delete loadingLabel;
+    delete loadingW;
     delete ui;
     foreach (DishBox *db, boxes)
     {
@@ -79,23 +76,30 @@ void BrowseTab::setDishes(const Dishes &d)
 void BrowseTab::updateView(QVector<DishBox *> &bxs)
 {
     int cnt = 0;
+    int target = bxs.length();
+    loadingW->setRange(0, target);
     foreach (DishBox *db, bxs)
     {
-        db->show();
+        if(cnt % 20 == 0){
+            loadingW->setValue(cnt);
+        }
         ui->gridLayout_scroll->addWidget(
             db, cnt / 2, cnt % 2, Qt::AlignCenter
         );
+        db->show();
         cnt += 1;
         QCoreApplication::processEvents();
     }
+    loadingW->setValue(target);
 }
 
 void BrowseTab::setLoading(bool loading)
 {
-    if (loading)
-        loadingLabel->move(ui->scrollArea->mapToParent(ui->scrollArea->rect().center())
-                           - loadingLabel->rect().center());
-    loadingLabel->setVisible(loading);
+    if(loading){
+        loadingW->move(ui->scrollArea->mapToParent(ui->scrollArea->rect().center()) - loadingW->rect().center());
+        loadingW->setValue(0);
+    }
+    this->loadingW->setVisible(loading);
     ui->scrollArea->setHidden(loading);
     ui->lineEdit_search->setDisabled(loading);
     ui->pushButton_search->setDisabled(loading);
@@ -110,7 +114,7 @@ void BrowseTab::initBoxes()
     boxes.clear();
     foreach (const Dish &dish, dishes.getAllDishes())
     {
-        DishBox *db = new DishBox(this);
+        DishBox *db = new DishBox();
         db->hide();
         db->setDish(dish);
         if (db->hasPicture())
@@ -187,7 +191,7 @@ void BrowseTab::on_pushButton_search_clicked()
             result.append(db);
     }
 
-    bool ascending = ui->comboBox_order->currentIndex() == 1;
+    bool ascending = ui->comboBox_order->currentIndex() == 0;
     // result.sortByPrice(ascending);
     if (ascending)
         std::sort(
@@ -223,3 +227,11 @@ void BrowseTab::on_doubleSpinBox_upr_valueChanged(double upr)
     ui->doubleSpinBox_lwr->setMaximum(upr);
 }
 
+void BrowseTab::keyPressEvent(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_Enter:
+    case Qt::Key_Return:{
+        on_pushButton_search_clicked();
+    }break;
+    }
+}

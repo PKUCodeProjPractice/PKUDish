@@ -37,6 +37,9 @@ public:
 
 private:
     Ui::RandomTab *ui;
+
+private slots:
+    void keyPressEvent(QKeyEvent *) override;
 };
 
 #endif // RANDOMTAB_H
