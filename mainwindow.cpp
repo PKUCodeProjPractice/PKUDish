@@ -34,7 +34,7 @@ void MainWindow::loadDishes()
         "dishes-jia2.csv",
         "dishes-jia3.csv",
         "dishes-nong1.csv",
-        "dishes-nong21.csv",
+        "dishes-nong2.csv",
         "dishes-yannan.csv"
     };
     foreach (const QString &f, files)
