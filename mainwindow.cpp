@@ -3,6 +3,8 @@
 
 #include "dishfilehandler.h"
 #include <QDebug>
+#include <QString>
+#include <QVector>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,18 +29,26 @@ MainWindow::~MainWindow()
 void MainWindow::loadDishes()
 {
     Dishes dishes;
-    try
+    QVector<QString> files = {
+        "dishes-jia1.csv",
+        "dishes-jia2.csv",
+        "dishes-jia3.csv",
+        "dishes-nong1.csv",
+        "dishes-nong21.csv",
+        "dishes-yannan.csv"
+    };
+    foreach (const QString &f, files)
     {
-        DishFileHandler::read("://assets/data/dishes-jia1.csv", dishes);
-        DishFileHandler::read("://assets/data/dishes-jia2.csv", dishes);
-        DishFileHandler::read("://assets/data/dishes-nong1.csv", dishes);
-        DishFileHandler::read("://assets/data/dishes-nong2.csv", dishes);
-        DishFileHandler::read("://assets/data/dishes-nong1.csv", dishes);
+        try
+        {
+            DishFileHandler::read("://assets/data/" + f, dishes);
+        }
+        catch (const DishFileException &e)
+        {
+            qDebug() << "error reading file:" << e.getMessage();
+        }
     }
-    catch (const DishFileException &e)
-    {
-        qDebug() << "error reading file:" << e.getMessage();
-    }
+
     randomTab->setDishes(dishes);
     browseTab->setDishes(dishes);
 }
